@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Class I</title>
+    <script>
+        function Ninja(name, health, speed, stringth) {
+
+            var Ninja = {};
+            Ninja.name = name;
+            Ninja.health = health;
+            Ninja.speed = speed;
+            Ninja.stringth = stringth;
+
+            Ninja.sayName = function () {
+                console.log("my ninja name" + Ninja.name)
+            }
+            Ninja.showStats = function () {
+                console.log("my ninja status" + " | ninja name: " + this.name + " | ninja Stringth: " + this.stringth + " | ninja Speed: " + Ninja.speed + " | ninja Health: " + Ninja.health)
+            }
+            Ninja.drinkSake = function () {
+                Ninja.health += 10
+                console.log("update ninja health : " + Ninja.health)
+            }
+            Ninja.punch = otherNinja => {
+                if (otherNinja instanceof Object) {
+                    otherNinja.health -= 5;
+                    console.log(`${otherNinja.name} was punched by ${Ninja.name} and lost 5 Health!`);
+                } else {
+                    console.log(`Not a ninja!`);
+                }
+            };
+
+            Ninja.kick = otherNinja => {
+                if (otherNinja instanceof Object) {
+                    const kickValue = Ninja.strength * 15;
+                    otherNinja.health -= kickValue;
+                    console.log(`${otherNinja.name} was kicked by ${Ninja.name} and lost ${kickValue} health!`);
+                } else {
+                    console.log(`Not a ninja!`);
+                }
+            }
+            return Ninja;
+
+        }
+        Ninja1 = new Ninja("John", 100, 20, 10);
+        Ninja1.showStats();
+
+        Ninja2 = new Ninja("ninja2", 100, 20, 10);
+        Ninja2.showStats();
+
+        Ninja2.punch(Ninja1);
+        Ninja1.kick(Ninja2);
+
+        Ninja1.showStats();
+        Ninja2.showStats();
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
