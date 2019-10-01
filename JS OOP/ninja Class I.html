@@ -11,9 +11,9 @@
 
             var Ninja = {};
             Ninja.name = name;
-            Ninja.health = health;
-            Ninja.speed = speed;
-            Ninja.stringth = stringth;
+            Ninja.health = 100;
+            Ninja.speed = 3;
+            Ninja.stringth = 3;
 
             Ninja.sayName = function () {
                 console.log("my ninja name" + Ninja.name)
@@ -28,7 +28,7 @@
             return Ninja;
         }
 
-        Ninja1 = new Ninja("John",100,20,10);
+        Ninja1 = new Ninja("John");
         Ninja1.showStats();
         Ninja1.drinkSake();
         Ninja1.drinkSake();
